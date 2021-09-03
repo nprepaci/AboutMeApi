@@ -37,7 +37,7 @@ class MainVC: UIViewController, Storyboarded {
     tableView.dataSource = self
     tableView.delegate = self
     
-    // Loads API data and reloads tableview once completion handler is triggered
+    // Loads API data and reloads tableview once completion handler is run
     // Takes argument of activity indicator - api func handles activity indicator stop event once completed or failed
     api.loadData(activityIndicator: activityIndicator) { ResponseData in
       self.storedData = self.api.storedData

@@ -13,11 +13,9 @@ class AboutMeApiUITests: XCTestCase {
     override func setUpWithError() throws {
 
         continueAfterFailure = false
-
     }
 
     override func tearDownWithError() throws {
-
     }
   
   
@@ -28,20 +26,16 @@ class AboutMeApiUITests: XCTestCase {
         app.launch()
         app.tables/*@START_MENU_TOKEN@*/.staticTexts["Abyssinian"]/*[[".cells.staticTexts[\"Abyssinian\"]",".staticTexts[\"Abyssinian\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.scrollViews.otherElements.staticTexts["5"].swipeUp()
-        
-        imagevir
     
   }
 
+  // Clicks on user profile image and verifies scroll
       func testUserProfileClick() throws {
         
         let app = XCUIApplication()
         app.launch()
         app.navigationBars["CatBook"].buttons["Button"].tap()
         app.scrollViews.otherElements.containing(.image, identifier:"banner").element.swipeUp()
-        
-      
-      
     }
 
     func testLaunchPerformance() throws {

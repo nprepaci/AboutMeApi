@@ -10,7 +10,7 @@ import XCTest
 
 class AboutMeApiTests: XCTestCase {
   
-  //Function that tests the API to ensure it returns data successfully
+  // Tests the API to ensure it returns data successfully
   func testAPI() {
     
     // Create an expectation for a background download task.

@@ -7,7 +7,7 @@
 
 import UIKit
 
-//Performs line growth animation
+//Performs line growth animation used within CatDetailVC
 class Animations {
   func animateLines(view1: UIView, view2: UIView, view3: UIView, view4: UIView) {
     UIView.animate(withDuration: 0.0, animations: {

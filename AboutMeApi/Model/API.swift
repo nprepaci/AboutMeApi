@@ -85,6 +85,7 @@ class API {
   // Stores data from GET request
   var storedData = ResponseData()
   
+  // Fetches data from thecatapi, and stores it in a varible. Utilizes a completion handler so we can easily refresh the table view once complete.
   func loadData(activityIndicator: UIActivityIndicatorView, completionHandler: @escaping (ResponseData) -> Void) {
     
     // Starts activity indicator

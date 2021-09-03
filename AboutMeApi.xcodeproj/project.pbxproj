@@ -117,21 +117,7 @@
 		7C5E20CD26DFEC1D00EBFAF6 /* AboutMeApi */ = {
 			isa = PBXGroup;
 			children = (
-				7C5E210126E001D300EBFAF6 /* API.swift */,
-				7C5E20CE26DFEC1D00EBFAF6 /* AppDelegate.swift */,
-				7C5E20D026DFEC1D00EBFAF6 /* SceneDelegate.swift */,
-				7C5E20D226DFEC1D00EBFAF6 /* MainVC.swift */,
-				7C5E210526E042AC00EBFAF6 /* CatDetailVC.swift */,
-				7C5E210D26E117E000EBFAF6 /* UserProfileVC.swift */,
-				7C5E210326E03B6100EBFAF6 /* CustomTableCell.swift */,
-				7C5E20D426DFEC1D00EBFAF6 /* Main.storyboard */,
-				7C5E211126E1C7F000EBFAF6 /* Animations.swift */,
-				7C5E210F26E18E7A00EBFAF6 /* ProfileData.swift */,
-				7C5E210726E0464B00EBFAF6 /* Coordinator.swift */,
-				7C5E210926E046AB00EBFAF6 /* Storyboarded.swift */,
-				7C5E210B26E047EE00EBFAF6 /* MainCoordinator.swift */,
 				7C5E20D726DFEC2100EBFAF6 /* Assets.xcassets */,
-				7C5E20D926DFEC2100EBFAF6 /* LaunchScreen.storyboard */,
 				7C5E20DC26DFEC2100EBFAF6 /* Info.plist */,
 				7C5E20FF26DFF0A700EBFAF6 /* Model */,
 				7C5E210026DFF0B000EBFAF6 /* View */,
@@ -161,6 +147,10 @@
 		7C5E20FE26DFF0A300EBFAF6 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				7C5E211626E1D96500EBFAF6 /* Animation */,
+				7C5E211826E1D97F00EBFAF6 /* Delegates */,
+				7C5E211726E1D97300EBFAF6 /* Custom Cells */,
+				7C5E211526E1D94E00EBFAF6 /* Coordinator */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -168,6 +158,8 @@
 		7C5E20FF26DFF0A700EBFAF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7C5E210126E001D300EBFAF6 /* API.swift */,
+				7C5E210F26E18E7A00EBFAF6 /* ProfileData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,10 +167,66 @@
 		7C5E210026DFF0B000EBFAF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7C5E211426E1D93800EBFAF6 /* Storyboards */,
+				7C5E211326E1D92300EBFAF6 /* View Controllers */,
 			);
 			name = View;
 			path = AboutMeApiTests/View;
 			sourceTree = SOURCE_ROOT;
+		};
+		7C5E211326E1D92300EBFAF6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C5E20D226DFEC1D00EBFAF6 /* MainVC.swift */,
+				7C5E210D26E117E000EBFAF6 /* UserProfileVC.swift */,
+				7C5E210526E042AC00EBFAF6 /* CatDetailVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7C5E211426E1D93800EBFAF6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7C5E20D426DFEC1D00EBFAF6 /* Main.storyboard */,
+				7C5E20D926DFEC2100EBFAF6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7C5E211526E1D94E00EBFAF6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7C5E210726E0464B00EBFAF6 /* Coordinator.swift */,
+				7C5E210926E046AB00EBFAF6 /* Storyboarded.swift */,
+				7C5E210B26E047EE00EBFAF6 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7C5E211626E1D96500EBFAF6 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				7C5E211126E1C7F000EBFAF6 /* Animations.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		7C5E211726E1D97300EBFAF6 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C5E210326E03B6100EBFAF6 /* CustomTableCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		7C5E211826E1D97F00EBFAF6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				7C5E20D026DFEC1D00EBFAF6 /* SceneDelegate.swift */,
+				7C5E20CE26DFEC1D00EBFAF6 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

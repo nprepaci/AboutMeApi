@@ -16,6 +16,7 @@ class CatDetailVC: UIViewController, Storyboarded {
   @IBOutlet weak var lifespanLabel: UILabel!
   @IBOutlet weak var energyLabel: UILabel!
   @IBOutlet weak var detailLabel: UILabel!
+  @IBOutlet weak var imageBorderView: UIView!
   
   var image = UIImage()
   var name = ""
@@ -38,6 +39,11 @@ class CatDetailVC: UIViewController, Storyboarded {
     // Allows setting of corner radius
     imageView.clipsToBounds = true
     imageView.layer.cornerRadius = 15
+    imageBorderView.clipsToBounds = true
+    imageBorderView.layer.cornerRadius = 15
+    
+    // Sets navigation bar title
+    self.title = "Cat Details"
 
     }
   

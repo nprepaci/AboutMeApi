@@ -33,4 +33,10 @@ class MainCoordinator: Coordinator {
     navigationController.pushViewController(vc, animated: true)
   }
   
+  func userProfile() {
+    let vc = UserProfileVC.instantiate()
+    vc.coordinator = self
+    navigationController.pushViewController(vc, animated: true)
+  }
+  
 }

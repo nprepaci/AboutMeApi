@@ -25,7 +25,7 @@ class MainVC: UIViewController, Storyboarded {
     profileButton.imageView?.layer.cornerRadius = 17.5
     
     //Sets title of nav bar
-    self.title = "News Feed"
+    self.title = "CatBook"
     tableView.dataSource = self
     tableView.delegate = self
     
@@ -35,12 +35,19 @@ class MainVC: UIViewController, Storyboarded {
       self.tableView.reloadData()
     }
   }
+  
+  @IBAction func profileImageClicked(_ sender: Any) {
+    
+    coordinator?.userProfile()
+    
+  }
 }
 
 extension MainVC: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     indexOfCurrentRow = indexPath.row
     
+    // Navigates to CatDetailVC, passes necessary information
     coordinator?.catDetails(details: storedData[indexOfCurrentRow].description, name: storedData[indexOfCurrentRow].name, temperament: storedData[indexOfCurrentRow].temperament, lifespan: storedData[indexOfCurrentRow].lifeSpan, energy: storedData[indexOfCurrentRow].energyLevel, image: UIImage(data: try! Data(contentsOf: URL(string: storedData[indexPath.row].image?.url ?? "") ?? URL.init(fileURLWithPath: ""))) ?? UIImage.init())
     
     // Deselects row after click

@@ -21,6 +21,8 @@
 		7C5E210826E0464B00EBFAF6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E210726E0464B00EBFAF6 /* Coordinator.swift */; };
 		7C5E210A26E046AB00EBFAF6 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E210926E046AB00EBFAF6 /* Storyboarded.swift */; };
 		7C5E210C26E047EE00EBFAF6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E210B26E047EE00EBFAF6 /* MainCoordinator.swift */; };
+		7C5E210E26E117E000EBFAF6 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E210D26E117E000EBFAF6 /* UserProfileVC.swift */; };
+		7C5E211026E18E7A00EBFAF6 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E210F26E18E7A00EBFAF6 /* ProfileData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		7C5E210726E0464B00EBFAF6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7C5E210926E046AB00EBFAF6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7C5E210B26E047EE00EBFAF6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		7C5E210D26E117E000EBFAF6 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		7C5E210F26E18E7A00EBFAF6 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +120,10 @@
 				7C5E20D026DFEC1D00EBFAF6 /* SceneDelegate.swift */,
 				7C5E20D226DFEC1D00EBFAF6 /* MainVC.swift */,
 				7C5E210526E042AC00EBFAF6 /* CatDetailVC.swift */,
+				7C5E210D26E117E000EBFAF6 /* UserProfileVC.swift */,
 				7C5E210326E03B6100EBFAF6 /* CustomTableCell.swift */,
 				7C5E20D426DFEC1D00EBFAF6 /* Main.storyboard */,
+				7C5E210F26E18E7A00EBFAF6 /* ProfileData.swift */,
 				7C5E210726E0464B00EBFAF6 /* Coordinator.swift */,
 				7C5E210926E046AB00EBFAF6 /* Storyboarded.swift */,
 				7C5E210B26E047EE00EBFAF6 /* MainCoordinator.swift */,
@@ -304,11 +310,13 @@
 				7C5E20D326DFEC1D00EBFAF6 /* MainVC.swift in Sources */,
 				7C5E210426E03B6100EBFAF6 /* CustomTableCell.swift in Sources */,
 				7C5E210826E0464B00EBFAF6 /* Coordinator.swift in Sources */,
+				7C5E210E26E117E000EBFAF6 /* UserProfileVC.swift in Sources */,
 				7C5E20CF26DFEC1D00EBFAF6 /* AppDelegate.swift in Sources */,
 				7C5E210626E042AC00EBFAF6 /* CatDetailVC.swift in Sources */,
 				7C5E210226E001D300EBFAF6 /* API.swift in Sources */,
 				7C5E20D126DFEC1D00EBFAF6 /* SceneDelegate.swift in Sources */,
 				7C5E210C26E047EE00EBFAF6 /* MainCoordinator.swift in Sources */,
+				7C5E211026E18E7A00EBFAF6 /* ProfileData.swift in Sources */,
 				7C5E210A26E046AB00EBFAF6 /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

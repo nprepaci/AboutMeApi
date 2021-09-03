@@ -82,7 +82,7 @@ class API {
   var storedData = ResponseData()
   func loadData(search: String, completionHandler: @escaping (ResponseData) -> Void) {
     //activityIndicator.startAnimating()
-    guard let url = URL(string:"https://api.thecatapi.com/v1/breeds?limit=10") else {
+    guard let url = URL(string:"https://api.thecatapi.com/v1/breeds?limit=20") else {
       print("failed to fetch data")
       //activityIndicator.stopAnimating()
       return

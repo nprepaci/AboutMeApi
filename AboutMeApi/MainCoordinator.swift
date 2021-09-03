@@ -29,6 +29,7 @@ class MainCoordinator: Coordinator {
     vc.details = details
     vc.name = name
     vc.temperament = temperament
+    vc.energy = energy
     vc.lifespan = lifespan
     navigationController.pushViewController(vc, animated: true)
   }

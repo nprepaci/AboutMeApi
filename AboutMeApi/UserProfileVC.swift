@@ -9,8 +9,10 @@ import UIKit
 
 class UserProfileVC: UIViewController, Storyboarded {
   
+  // Coordinator class reference
   weak var coordinator: MainCoordinator?
 
+  //General outlets
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var recipeDetails: UILabel!
   @IBOutlet weak var chartTrackerDetails: UILabel!
@@ -18,6 +20,9 @@ class UserProfileVC: UIViewController, Storyboarded {
   @IBOutlet weak var mtaLabel: UILabel!
   @IBOutlet weak var pepsiLabel: UILabel!
   @IBOutlet weak var tmhccLabel: UILabel!
+  @IBOutlet weak var trainDetails: UILabel!
+  
+  // Class variables
   var storedProfileData = ProfileData()
   
   override func viewDidLoad() {
@@ -42,9 +47,4 @@ class UserProfileVC: UIViewController, Storyboarded {
     tmhccLabel.text = storedProfileData.tokioMarineExp
     
     }
-  @IBOutlet weak var trainDetails: UILabel!
-  
-    // MARK: - Navigation
-
-
 }

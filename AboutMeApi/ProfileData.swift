@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-
+// Class to store static data for profile vc
 class ProfileData {
   
   // Professional Experience

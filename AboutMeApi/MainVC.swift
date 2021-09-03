@@ -8,17 +8,25 @@
 import UIKit
 
 class MainVC: UIViewController, Storyboarded {
-  var coordinator: MainCoordinator?
+  weak var coordinator: MainCoordinator?
 
+  // General outlets
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var profileButton: UIButton!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
+  // Classes
   var api = API()
   var storedData: ResponseData = ResponseData()
+  
+  // Stores index of tapped row
   var indexOfCurrentRow = Int()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Hides activity indicator when .stop is called
+    activityIndicator.hidesWhenStopped = true
     
     //rounds corners of bar button item specific to its frame of 35 x 35
     //E.g. 35/50 == 0.7, so 0.7 * 25 == 17.5
@@ -30,7 +38,8 @@ class MainVC: UIViewController, Storyboarded {
     tableView.delegate = self
     
     // Loads API data and reloads tableview once completion handler is triggered
-    api.loadData(search: "") { ResponseData in
+    // Takes argument of activity indicator - api func handles activity indicator stop event once completed or failed
+    api.loadData(activityIndicator: activityIndicator) { ResponseData in
       self.storedData = self.api.storedData
       self.tableView.reloadData()
     }
@@ -38,13 +47,20 @@ class MainVC: UIViewController, Storyboarded {
   
   @IBAction func profileImageClicked(_ sender: Any) {
     
+    // Method call in coordinator class
+    // Navigates to user profile when the profile image is clicked
     coordinator?.userProfile()
-    
   }
 }
 
+
+// MARK: - TABLEVIEW EXTENSIONS
+
 extension MainVC: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    // Passes index of current row to variable
+    // Used to pass array data at specified index to cat detail view
     indexOfCurrentRow = indexPath.row
     
     // Navigates to CatDetailVC, passes necessary information
@@ -62,15 +78,19 @@ extension MainVC: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    // Using custom table view cell, so as! CustomTableCell appended
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableCell
+    
+    // Rounds edges of tableviewcell's image label
     cell.outerImageView.clipsToBounds = true
     cell.outerImageView.layer.cornerRadius = 25
-    cell.cellImage?.image = UIImage(data: try! Data(contentsOf: URL(string: storedData[indexPath.row].image?.url ?? "") ?? URL.init(fileURLWithPath: "")))
     
+    // Assings data to views
+    cell.cellImage?.image = UIImage(data: try! Data(contentsOf: URL(string: storedData[indexPath.row].image?.url ?? "") ?? URL.init(fileURLWithPath: "")))
     cell.cellLabel?.text = storedData[indexPath.row].name
     
     return cell
   }
-  
 }
 

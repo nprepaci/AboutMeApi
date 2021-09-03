@@ -19,6 +19,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3O9-gh-SeC">
                                 <rect key="frame" x="0.0" y="88" width="390" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="xQD-fK-dLU">
+                                    <rect key="frame" x="0.0" y="160.66666828502309" width="390" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="112" id="fnM-gN-A6q" customClass="CustomTableCell" customModule="AboutMeApi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="112"/>
@@ -89,7 +93,7 @@
                                 <rect key="frame" x="16" y="1" width="64" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3l-cZ-5EC">
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3l-cZ-5EC">
                                         <rect key="frame" x="15" y="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="croppedprofile"/>
@@ -102,6 +106,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="xQD-fK-dLU" id="MS6-4f-z4l"/>
                         <outlet property="profileButton" destination="m3l-cZ-5EC" id="Z8F-aL-K3T"/>
                         <outlet property="tableView" destination="3O9-gh-SeC" id="N6x-ZI-acs"/>
                     </connections>
@@ -648,6 +653,10 @@
                         <outlet property="imageBorderView" destination="okl-nY-5Nl" id="14R-cO-fse"/>
                         <outlet property="imageView" destination="CnK-mJ-W9q" id="XfS-6V-Lr5"/>
                         <outlet property="lifespanLabel" destination="Xmr-yP-Zej" id="y8q-0Z-X24"/>
+                        <outlet property="lineViewFour" destination="FDW-9o-zaj" id="oU5-Tw-YDf"/>
+                        <outlet property="lineViewOne" destination="rmi-xq-5aY" id="RtE-GW-zFk"/>
+                        <outlet property="lineViewThree" destination="U2m-h0-370" id="0DL-fn-NeE"/>
+                        <outlet property="lineViewTwo" destination="SUq-2Q-sgG" id="U2j-pY-hOA"/>
                         <outlet property="nameLabel" destination="4Qe-mD-lyd" id="zSs-xz-fc5"/>
                         <outlet property="temperamentLabel" destination="7Dm-ef-JWW" id="Ef4-2j-31A"/>
                     </connections>

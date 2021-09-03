@@ -80,11 +80,11 @@ typealias ResponseData = [Response]
 
 class API {
   var storedData = ResponseData()
-  func loadData(search: String, completionHandler: @escaping (ResponseData) -> Void) {
-    //activityIndicator.startAnimating()
+  func loadData(activityIndicator: UIActivityIndicatorView, completionHandler: @escaping (ResponseData) -> Void) {
+    activityIndicator.startAnimating()
     guard let url = URL(string:"https://api.thecatapi.com/v1/breeds?limit=20") else {
       print("failed to fetch data")
-      //activityIndicator.stopAnimating()
+      activityIndicator.stopAnimating()
       return
     }
     let request = URLRequest(url: url)
@@ -95,7 +95,7 @@ class API {
           DispatchQueue.main.async {
             self.storedData = response
             completionHandler(self.storedData)
-            //activityIndicator.stopAnimating()
+            activityIndicator.stopAnimating()
           }
         }
         catch let error {

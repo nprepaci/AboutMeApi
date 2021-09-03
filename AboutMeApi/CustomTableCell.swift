@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Used to store outlets for custom table cell
 class CustomTableCell: UITableViewCell {
   @IBOutlet weak var outerImageView: UIView!
   @IBOutlet weak var cellImage: UIImageView!

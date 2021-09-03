@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// Coordinator class that contains navigation functions
+
 class MainCoordinator: Coordinator {
   var childCoordinators = [Coordinator]()
   var navigationController: UINavigationController
@@ -22,6 +24,7 @@ class MainCoordinator: Coordinator {
     navigationController.pushViewController(vc, animated: false)
     }
   
+  // Navigates to CatDetailsVC
   func catDetails(details: String, name: String, temperament: String, lifespan: String, energy: Int, image: UIImage) {
     let vc = CatDetailVC.instantiate()
     vc.coordinator = self
@@ -34,10 +37,10 @@ class MainCoordinator: Coordinator {
     navigationController.pushViewController(vc, animated: true)
   }
   
+  // Navigates to UserProfileVC
   func userProfile() {
     let vc = UserProfileVC.instantiate()
     vc.coordinator = self
     navigationController.pushViewController(vc, animated: true)
   }
-  
 }

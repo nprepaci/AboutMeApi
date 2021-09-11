@@ -18,6 +18,7 @@ class MainVC: UIViewController, Storyboarded {
   // Classes
   var api = API()
   var storedData: ResponseData = ResponseData()
+  var storedImages = [UIImage]()
   
   // Stores index of tapped row
   var indexOfCurrentRow = Int()
@@ -41,12 +42,17 @@ class MainVC: UIViewController, Storyboarded {
     // Takes argument of activity indicator - api func handles activity indicator stop event once completed or failed
     api.loadData(activityIndicator: activityIndicator) { ResponseData in
       self.storedData = self.api.storedData
+      
+      // Appends images to separate array as UIImage. This is done for cell loading performance purposes
+      for i in 0..<self.storedData.count {
+        self.storedImages.append(UIImage(data: try! Data(contentsOf: URL(string: self.storedData[i].image?.url ?? "") ?? URL.init(fileURLWithPath: "")))!)
+      }
       self.tableView.reloadData()
+      
     }
   }
   
   @IBAction func profileImageClicked(_ sender: Any) {
-    
     // Method call in coordinator class
     // Navigates to user profile when the profile image is clicked
     coordinator?.userProfile()
@@ -64,7 +70,7 @@ extension MainVC: UITableViewDelegate {
     indexOfCurrentRow = indexPath.row
     
     // Navigates to CatDetailVC, passes necessary information
-    coordinator?.catDetails(details: storedData[indexOfCurrentRow].description, name: storedData[indexOfCurrentRow].name, temperament: storedData[indexOfCurrentRow].temperament, lifespan: storedData[indexOfCurrentRow].lifeSpan, energy: storedData[indexOfCurrentRow].energyLevel, image: UIImage(data: try! Data(contentsOf: URL(string: storedData[indexPath.row].image?.url ?? "") ?? URL.init(fileURLWithPath: ""))) ?? UIImage.init())
+    coordinator?.catDetails(details: storedData[indexOfCurrentRow].description, name: storedData[indexOfCurrentRow].name, temperament: storedData[indexOfCurrentRow].temperament, lifespan: storedData[indexOfCurrentRow].lifeSpan, energy: storedData[indexOfCurrentRow].energyLevel, image: storedImages[indexOfCurrentRow])
     
     // Deselects row after click
     tableView.deselectRow(at: indexPath, animated: true)
@@ -86,8 +92,12 @@ extension MainVC: UITableViewDataSource {
     cell.outerImageView.clipsToBounds = true
     cell.outerImageView.layer.cornerRadius = 25
     
-    // Assings data to views
-    cell.cellImage?.image = UIImage(data: try! Data(contentsOf: URL(string: storedData[indexPath.row].image?.url ?? "") ?? URL.init(fileURLWithPath: "")))
+    // Old code, unoptimized version of image loading in table view
+    //cell.cellImage?.image = UIImage(data: try! Data(contentsOf: URL(string: storedData[indexPath.row].image?.url ?? "") ?? URL.init(fileURLWithPath: "")))
+    
+    // Moved the image data to unique array where it is pre-converted to UIImage
+    // This prevents the UIImage conversion from being executed each time a cell loads
+    cell.cellImage.image = storedImages[indexPath.row]
     cell.cellLabel?.text = storedData[indexPath.row].name
     
     return cell

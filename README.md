@@ -2,7 +2,7 @@
   <img width="400" height="400" src="https://user-images.githubusercontent.com/23087566/139608580-9da3050b-2506-4e92-a3b9-ef7a1b496813.png">
 </p>
 
-# AboutMeApi
+# CatBook
 
 AboutMeApi is a fun twist on a simple social media platform. This app utilizes [The Cat Api](https://thecatapi.com) to return a social media style "news feed" of cat data. 
 
